@@ -238,4 +238,6 @@ Si os tengo que explicar esto salíos de la carrera (Es broma pero se entiende f
 
 ==IMPORTANTE==
 Al final del documento de primeros pasos de shell ([este de aquí maquina](https://platea.ujaen.es/pluginfile.php/453787/mod_resource/content/7/P07-shell-primeros-pasos.pdf)) al final de la pagina 15 y en adelante son ejercicios propuestos y ejercicios que ponen los profes para probar. hacedlos TODOS, no solo leerlos, los hacéis y veis que cambian, os dejo como deberes que me resolváis los ejercicios y me los enseñéis hechos (si tenéis dudas preguntadme, es literalmente la gracia) y intentad tenerlos para el domingo 10 de noviembre como muy tarde para que podamos corregirlos o ese mismo domingo o el lunes, porfi. Este examen lo sacamos entre todos.
+
+
 ![Alt Text](https://i.pinimg.com/originals/ec/da/d3/ecdad30106f0b7224486da4b7ea93de9.gif)
