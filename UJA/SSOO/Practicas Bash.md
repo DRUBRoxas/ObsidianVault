@@ -14,13 +14,13 @@ echo codigo
 Todos los shell scripts deberían tener las siguientes partes:
 
 * **Cabecera (hash-bang)**: La primera línea de un shell script es un tipo especial de comentario.
-	* Comienza por los caracteres #! y va seguido del nombre de un intérprete de órdenes o shell. 
-	* IMPORTANTE: ==Los caracteres #! deben aparecer justo al comienzo del archivo==, es decir, deben ser los dos primeros bytes del archivo de texto para que el sistema los pueda reconocer. 
+	* Comienza por los caracteres \#! y va seguido del nombre de un intérprete de órdenes o shell. 
+	* IMPORTANTE: ==Los caracteres \#! deben aparecer justo al comienzo del archivo==, es decir, deben ser los dos primeros bytes del archivo de texto para que el sistema los pueda reconocer. 
 	* Puedes encontrar tu path de la shell de bash (el cual podría variar del de arriba) usando el comando: `which bash`
-* **Comentarios** Se indican con el carácter # al comienzo de una línea o palabra. 
+* **Comentarios** Se indican con el carácter \# al comienzo de una línea o palabra. 
 	* Todos los shell scripts ==deberían incluir como mínimo quién es su autor y una breve descripción== de para qué sirve el script.
-	* El intérprete ignora el comentario desde el signo # hasta el final de la línea. 
-	* **IMPORTANTE**: Un carácter #, sólo se interpreta como comentario, si va ==justo al principio de una línea o de una palabra de un shell script==. Si va en medio o al final de una palabra de un shell script, no se interpreta como comentario. 
+	* El intérprete ignora el comentario desde el signo \# hasta el final de la línea. 
+	* **IMPORTANTE**: Un carácter \#, sólo se interpreta como comentario, si va ==justo al principio de una línea o de una palabra de un shell script==. Si va en medio o al final de una palabra de un shell script, no se interpreta como comentario. 
 * **Órdenes**: Las órdenes que componen el shell script.
 	* ==Se escriben de la misma forma que se escriben en la consola== cuando se ejecutan a mano
 * No es necesario, pero los ==scripts deberían tener una extensión==, como por ejemplo ==.sh== , que ayudan a reconocer que archivos son scripts.
@@ -92,19 +92,19 @@ ls $la_ruta
 
 (Este script en los apuntes esta mal hecho xd)
 
-* Línea #1: El shebang (#!/bin/bash) apunta hacia la ruta de la shell de bash.
-* Línea #2: Autor
-* Línea #3: Descripción
-* Línea #5: El comando echo muestra la fecha actual y el tiempo en la shell. Nota que date está con las comillas invertidas
-* Línea #6: el comando read lee la entrada y lo almacena en la variable la_ruta
-* Línea #8: ls toma la variable de la ruta y muestra los archivos y carpetas del directorio almacenado en la variable.
+* Línea \#1: El shebang (\#!/bin/bash) apunta hacia la ruta de la shell de bash.
+* Línea \#2: Autor
+* Línea \#3: Descripción
+* Línea \#5: El comando echo muestra la fecha actual y el tiempo en la shell. Nota que date está con las comillas invertidas
+* Línea \#6: el comando read lee la entrada y lo almacena en la variable la_ruta
+* Línea \#8: ls toma la variable de la ruta y muestra los archivos y carpetas del directorio almacenado en la variable.
 	* El símbolo $ hace que utilice la variable
 
 ## Parámetros
 
 * Parámetros posicionales: argumentos presentes en la línea que invoca a la orden
 	* Por ejemplo, en la orden `ls /bin`, hay un parámetro posicional, /bin, que ocupa la posición 1.
-* Parámetros especiales: Su contenido lo rellena el intérprete de órdenes para guardar información sobre su estado actual, como por ejemplo el número de parámetros posicionales de la orden que se está ejecutando. Se referencian mediante caracteres no alfanuméricos, como por ejemplo * o #.
+* Parámetros especiales: Su contenido lo rellena el intérprete de órdenes para guardar información sobre su estado actual, como por ejemplo el número de parámetros posicionales de la orden que se está ejecutando. Se referencian mediante caracteres no alfanuméricos, como por ejemplo * o \#.
 * Variables: Las usa el programador del shell script para almacenar cualquier información que necesite.
 	* Se referencian mediante un nombre.
 	* El nombre de una variable puede ser cualquier combinación de letras, números o el guión bajo (\_) y siempre comienza por una letra o el guión bajo
@@ -117,7 +117,7 @@ Porque los nombres de variables en mayúsculas están reservados para las variab
 Para acceder al valor de un parámetro se usa $
 
 Por ejemplo, para acceder al contenido del parámetro posicional que ocupa la segunda posición se escribe ==$2==.
-Para acceder al contenido del parámetro especial #, se escribe ==$#==
+Para acceder al contenido del parámetro especial \#, se escribe ==$\#==
 Para acceder al contenido de la variable resultado, se escribe ==$resultado==
 
 También se puede encerrar entre llaves el identificador del parámetro. Esto permite delimitar bien cual es ese identificador y es el método preferible3 aunque sea más difícil de escribir. Así, los ejemplos anteriores también se pueden escribir de la siguiente forma: 

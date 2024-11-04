@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "UJA/SSOO/Practicas Bash.md",
+                "file": "UJA/DIS/TEMA 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Practicas Bash"
+              "title": "TEMA 1"
             }
           }
         ]
@@ -144,14 +144,23 @@
               "icon": "lucide-list",
               "title": "Esquema de Practicas Bash"
             }
+          },
+          {
+            "id": "cc23546f5afa09fe",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -160,47 +169,51 @@
       "canvas:Crear nuevo lienzo": false,
       "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false
+      "command-palette:Abrir paleta de comandos": false,
+      "obsidian-git:Open Git source control": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9fb1ffd8fe80ca3e",
+  "active": "eec0206fa39f0804",
   "lastOpenFiles": [
-    "Assets/usavariableslinux.png",
-    "Assets/muestrainfolinux.png",
-    "UJA/DIS/TEMA 1.md",
-    "UJA/PAG/Reflexión, iluminación y sombreado.md",
+    "UJA/DIS/Rendimiento.md",
+    "UJA/DIS/DIS 2024-2025.md",
+    "UJA/META/Practica 2/Práctica 2 (NOTAS).md",
+    "UJA/META/Practica 2/Practica 2 Enunciado.md",
+    "UJA/META/Ejercicio hecho en clase.md",
     "UJA/PAG/RENDERING.md",
+    "UJA/PAG/Reflexión, iluminación y sombreado.md",
     "UJA/PAG/Programación de Aplicaciones Gráficas.md",
     "UJA/PAG/Practicas.md",
     "UJA/PAG/Geometria.md",
     "UJA/PAG/Cámara.md",
-    "Assets/Estructura de datos mallas triangulos.png",
-    "Assets/Malla no válida.png",
+    "UJA/SSOO/salida.pdf",
     "UJA/SSOO/Practicas Bash.md",
-    "UJA/DIS/Rendimiento.md",
+    "UJA/SSOO/config.tex",
+    "UJA/SSOO/config.tex.txt",
+    "UJA/SSOO/Nuevo Documento de texto.txt",
+    "UJA/DIS/TEMA 1.md",
+    "UJA/DIS/TEMA 2.md",
+    "Assets/usavariableslinux.png",
+    "Assets/sistemadereferencia.png",
+    "Assets/representacionpuntos.png",
+    "Assets/rendering.png",
     "Assets/parametrosespeciales.png",
     "Assets/P07-shell-primeros-pasos.pdf",
+    "Assets/muestrainfolinux.png",
+    "Assets/Malla no válida.png",
+    "Assets/Kubernetes.png",
+    "Assets/gridcloudcomputing.png",
     "Assets/gedit guia.png",
-    "UJA/META/Practica 2/Práctica 2 (NOTAS).md",
-    "UJA/META/Practica 2/Practica 2 Enunciado.md",
     "UJA/META/Practica 2",
     "UJA/META",
     "UJA/PAG/Camara.md",
     "Sin título.md",
     "UJA/SSOO",
-    "Assets/representacionpuntos.png",
-    "Assets/sistemadereferencia.png",
-    "UJA/DIS/TEMA 2.md",
-    "Assets/gridcloudcomputing.png",
-    "Assets/rendering.png",
     "UJA/DIS/Virtualización.md",
-    "Assets/Ejemplos Cloud.png",
-    "UJA/DIS/DIS 2024-2025.md",
     "Assets",
     "Bienvenido.md",
     "UJA/PAG",
-    "UJA",
-    "UJA/DIS",
     "cree un enlace.md"
   ]
 }
