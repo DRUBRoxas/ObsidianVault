@@ -1,3 +1,4 @@
+# Parte 1
 ## Consideraciones Iniciales
 Para empezar, todo esto viene del archivo Shell-Primeros-Pasos de platea
 Link al PDF en la web de platea: [P07-shell-primeros-pasos](https://platea.ujaen.es/pluginfile.php/453787/mod_resource/content/7/P07-shell-primeros-pasos.pdf)
@@ -241,3 +242,248 @@ Al final del documento de primeros pasos de shell ([este de aquí maquina](https
 
 
 ![Alt Text](https://i.pinimg.com/originals/ec/da/d3/ecdad30106f0b7224486da4b7ea93de9.gif)
+
+# Parte 2
+
+## Introducción
+### La estructura condicional if - then - else
+
+==If NO es una orden== sino una palabra clave que indica al bash que lo siguiente a if es un condicional.
+La síntesis correcta de un if en shell script es:
+``` Bash
+if [ condicion ]
+then
+	lo que quieras que haga en caso de que la condicion se cumpla
+else
+	Lo que quieras que haga en caso de que la condicion no se cumpla
+```
+
+==Los corchetes y los espacios que hay entre ellos son OBLIGATORIOS.== Es un fallo común no poner el espacio, si no lo pones, fallo seguro y suspenso al canto.
+Ejemplo:
+``` Bash
+if [-d ${HOME}/bin]
+```
+Esto dará un error en el que no encontrará la orden \[-d.
+
+==Es importante poner el espacio por AMBOS LADOS==
+
+## CONDICIONALES Y OPERADORES
+
+Para construir las condiciones, se usan valores, sustituciones de parámetros y operadores.
+Por ejemplo:
+```Bash
+[ -r ${1} ]
+```
+es una condición sintácticamente bien construida que comprueba si el valor del parámetro posicional 1, es el nombre de un archivo que existe y es legible (readable)
+
+En cristiano: -r dice si se puede leer y el parámetro posicional 1 es el que se le pasa al llamar al script ([[#Parámetros posicionales]])
+
+### Operadores para aplicar a archivos:
+
+Esto hay que aprendérselo si o si, son preguntas de examen y os hace falta para los scripts, os dejo aquí una tablita. Los ocho primeros son unarios, es decir que solo necesitan un archivo (El ejemplo del -r de antes) mientras que los dos últimos comparan 2 archivos 
+(Ejemplo: `[ archivo1 -nt archivo2 ]`)
+
+| Operador | Lo que hace                                                                                                                         |
+| :------: | :---------------------------------------------------------------------------------------------------------------------------------- |
+|    -r    | Comprueba si lo que va a continuación es el nombre de un archivo que existe y es legible.                                           |
+|    -x    | Comprueba si el archivo existe y es ejecutable.                                                                                     |
+|    -h    | Comprueba si el archivo existe y es un enlace simbólico.                                                                            |
+|    -f    | Comprueba si el archivo existe y es un fichero regular u ordinario (no es un directorio, ni otro tipo de archivo especial)          |
+|    -d    | Comprueba si el archivo existe y es un directorio.                                                                                  |
+|    -s    | Comprueba si el archivo existe y no está vacío (su tamaño es mayor que cero).                                                       |
+|    -e    | Comprueba si el archivo existe.                                                                                                     |
+|    -O    | Comprueba si el archivo es propiedad de quien ejecuta el shell script. O es una o mayúscula.                                        |
+|    -G    | Comprueba si el archivo pertenece al grupo de quien ejecuta el shell script.                                                        |
+|   -nt    | Se coloca entre dos nombres de archivos y devuelve verdadero si el primero tiene fecha de modificación más reciente que el segundo. |
+|   -ot    | Comprueba si el primer archivo tiene fecha de modificación más antigua que el segundo.                                              |
+### Operadores para aplicar a números
+Lo mismo pero con números, todos estos son binarios, es decir, necesitas dos numeros, te dejo la tabla:
+
+| Operador | Lo que hace                                                            | Como recordarlo |
+| :------: | ---------------------------------------------------------------------- | --------------- |
+|   -eq    | Comprueba si los dos números que se pasan como argumentos son iguales. | Equal           |
+|   -ne    | Comprueba si los dos números son distintos.                            | Not Equal       |
+|   -ge    | Comprueba si el primer número es mayor o igual que el segundo.         | Greater Equal   |
+|   -gt    | Comprueba si el primer número es mayor estricto que el segundo.        | Greater than    |
+|   -le    | Comprueba si el primer número es menor o igual que el segundo.         | Less Equal      |
+|   -lt    | Comprueba si el primer número es menor estricto que el segundo.        | Less Than       |
+
+Como puedes ver, se basan en las comparaciones típicas en ingles, quizá eso te ayude a recordarlo
+### Operadores para aplicar a cadenas de caracteres
+Venga, que lo adivinas solo, otra tabla.
+
+| -z  | Indica si la longitud de la cadena que se pasa como argumento es cero (cadena vacía).                                                                                                                     |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -n  | Indica si la longitud de la cadena es mayor que cero.                                                                                                                                                     |
+| =   | Comprueba si las dos cadenas de caracteres son iguales.                                                                                                                                                   |
+| !=  | Comprueba si las dos cadenas de caracteres son distintas.                                                                                                                                                 |
+| <   | Indica si la primera cadena es menor que la segunda. Hace una comparación lexicográfica (es decir, comparando carácter a carácter). Por ejemplo, la cadena “adiós” es menor que la cadena “hola”. ??????? |
+| >   | Indica si la primera cadena es mayor que la segunda.                                                                                                                                                      |
+
+Hemos terminado con las tablas (por ahora). Toma, un gatito feliz de que te hayas ==APRENDIDO LAS TABLAS DE MEMORIA QUE CAEN SIEMPRE==
+![Alt Text](https://media.tenor.com/bWUeVRqW9-IAAAAi/fast-cat-cat-excited.gif)
+
+
+
+### Condiciones compuestas
+
+Se pueden usar condiciones compuestas, por ejemplo comprobar a la vez si un archivo es legible y ejecutable. Para ello se usan los operadores lógicos && (and) y || (or) para separar dos condiciones simples.
+
+```Bash
+[ -r ${file} ] && [ -x ${file} ]
+```
+
+Si te has aprendido las tablas (que deberías) ya sabrás qué hace ese código.
+
+También puedes  usar el operador unario(Condicional que solo requiere 1) ! para negar cositas
+
+### Comparaciones Avanzadas
+
+También se pueden utilizar dobles corchetes \[\[ para realizar las comparaciones. Las diferencias son las siguientes:
+
+* No tienes que utilizar las comillas con las variables, los dobles corchetes trabajan perfectamente con los espacios:
+```Bash
+Así [-f "$file" ]es equivalente a [[-f $file ]]
+```
+
+* Con \[\[ puedes utilizar los operadores || y &&, así como < y > para las comparaciones de cadena
+
+* Puedes utilizar el operador =~ para expresiones regulares(voy a asumir que sabéis que es esto)
+```Bash
+[[ $respuesta =~ ^s(i)?$ ]]
+```
+
+* También puedes utilizar comodines como por ejemplo en la expresión
+```Bash
+[[ abc == a* ]]
+```
+Recordatorio de que los comodines se refiere a todo lo que va después (en este caso)
+
+Es posible que te preguntes por la razón para seguir utilizando \[ simple corchete en lugar de doble. La cuestión es por compatibilidad. Si utilizas Bash en diferentes equipos es posible que te encuentres alguna incompatibilidad. Así que depende de ti y de dónde lo vayas a utilizar
+
+	⬆️ Esto sale directamente del pdf, puede ser pregunta de examen asi que lo dejo aquí
+
+## Ejemplos del uso de condicionales en Shell Script
+
+### Comprobar si se han pasado todos los argumentos
+
+Ejemplo:
+Escribir un shell script que reciba dos argumentos y comprobar si se han pasado justamente dos argumentos.
+
+```Bash
+#!/bin/bash
+# Autor: Manuel Sánchez
+# Descripción: Comprueba si al script se le han pasado 
+# justamente dos argumentos.
+if [ ! ${#}-eq 2 ] 
+then 
+	echo "Error, se han pasado ${#} argumento(s)"
+fi
+```
+1) el parámetro especial # contiene el número de parámetros posicionales que se han pasado al shell script cuando se ejecutó. Por tanto si comprobamos si es distinto de 2, habremos comprobado si a nuestro script se le han pasado, o no, justamente dos argumentos.
+2) La palabra reservada then tiene que ir escrita en la línea siguiente a la línea donde está la palabra reservada if. Si se escribe en la misma línea se produce un error al interpretar la línea. 
+3)  El sangrado es opcional, pero si se incluye, el código es mucho más legible.
+
+Este código es importante porque probablemente pidan algo del estilo:
+> Haz un Shell Script que una 2 archivos de texto en uno solo, comprueba errores
+
+Probablemente sea mucho mas fácil que esto, pero esa comprobación (o la de ver si dos archivos son legibles) probablemente la pidan, es muy sencilla de hacer. En los ejercicios finales del tema lo usarán seguro
+
+### Comprobar si existe o no un archivo
+
+Ejemplo:
+Escribir un shell script que reciba un argumento (el nombre de un archivo ejecutable) y compruebe si ese archivo está en el directorio `bin` del usuario que ejecuta el shell script y realmente es ejecutable. Si no está debe escribir por pantalla que no existe ese archivo, y si no es ejecutable debe escribir por pantalla que no es ejecutable.
+```Bash
+#!/bin/bash 
+# Autor: Manuel Sánchez Salazar
+# Descripción: Comprueba si un nombre que se pasa como 
+# argumento corresponde a un programa 
+# ejecutable situado en el directorio ~/bin 
+if [ ${#}-ne 1 ] 
+then 
+	echo "Error. Se debe pasar un argumento"
+	exit
+fi
+if [ !-e ${HOME}/bin/${1} ]
+then
+	echo No existe el script: ${1}
+else
+	if [ ! -x ${HOME}/bin/${1} ]
+	then
+		echo ${1} no es un ejecutable
+	fi
+fi
+```
+
+* La variable HOME contiene la ruta completa del directorio base del usuario que ejecuta el script. Fíjate la importancia de siempre usar las llaves {} en la sustitución de parámetros. Si no se usara, la sustitución `${HOME}/bin/${1}` sería imposible.
+
+Esto podría haberse hecho realmente en un solo condicional usando || pero se hacen por separado para saber que esta fallando exactamente.
+
+### Comparar cadenas de caracteres
+Ejemplo:
+Escribir un shell script que reciba exactamente dos argumentos y que compruebe que son distintos. Si no se escriben dos argumentos, o si éstos son iguales debe escribir un error en la pantalla.
+
+```Bash
+#!/bin/bash
+# Autor: Manuel Sánchez Salazar
+# Descripción: Comprueba si los dos argumentos que se dan
+# son iguales.
+if [ ${#}-ne 2 ]
+then
+	echo "Error. No se han dado dos argumentos"
+else
+	if [ ${1} = ${2} ]
+	then
+	echo "Error. Los argumentos son iguales"
+	fi
+fi
+```
+
+### Comparar expresiones y números
+
+Ejemplo:
+Script triangulo.sh al que se le pasan 3 argumentos y devuelve el tipo de triangulo utilizando las siguientes condiciones
+Escaleno: Un triángulo en el que cada lado tiene una longitud diferente. 
+Isósceles: Un triángulo en el que 2 de sus lados tienen la misma longitud. 
+Equilátero: Un triángulo en el que todos los lados tienen la misma longitud.
+
+Para saber si una variable es numérica en Shell Script podemos comprobar con una expresión regular si todos sus caracteres son numéricos.
+`[[ "$variable" =~ ^[0-9]+$ ]]`
+```Bash
+ #!/bin/bash
+ # Autor/a: Lina García Cabrera
+ # Descripción: Tipo de triángulo:
+ # EQUILÁTERO, ISÓSCELES o ESCALENO.
+ # Se le pasan 3 números, los lados del triángulo y
+ # dice el tipo de triángulo
+ # Comprobar el número de argumentos
+ if [ $# != 3 ]
+ then
+	 echo "No has pasado 3 argumentos."
+	 echo "Sintaxis: ${0} lado1 lado2 lado3"
+ else
+	 # Comprobar que los argumentos son números
+	 if [[ "$1" =~ ^[0-9]+$ ]] && [[ "$2" =~ ^[0-9]+$ ]] && [[
+	 "$3" =~ ^[0-9]+$ ]]
+	 then
+		 # Todos los lados son iguales
+		 if [ $1-eq $2 ] && [ $2-eq $3 ] && [ $1-eq $3 ]
+		 then
+			 echo "El triángulo es EQUILÁTERO"
+		 # 2 lados son iguales
+		 elif [ $1-eq $2 ] || [ $2-eq $3 ] || [ $1-eq $3 ]
+		 then
+		 echo "El triángulo es ISÓSCELES"
+		 else
+		 echo "El triángulo es ESCALENO"
+		 fi
+	 else
+		 echo "Alguno de los argumentos no es un número"
+		 echo "Sintaxis: ${0} lado1 lado2 lado3"
+	 fi
+ fi
+```
+
+==IMPORTANTE==
+haced los putos ejercicios macho
+
