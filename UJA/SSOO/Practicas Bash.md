@@ -473,9 +473,9 @@ Para saber si una variable es numérica en Shell Script podemos comprobar con un
 		 # 2 lados son iguales
 		 elif [ $1-eq $2 ] || [ $2-eq $3 ] || [ $1-eq $3 ]
 		 then
-		 echo "El triángulo es ISÓSCELES"
+			 echo "El triángulo es ISÓSCELES"
 		 else
-		 echo "El triángulo es ESCALENO"
+			 echo "El triángulo es ESCALENO"
 		 fi
 	 else
 		 echo "Alguno de los argumentos no es un número"
