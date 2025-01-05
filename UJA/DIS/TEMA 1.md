@@ -1,3 +1,4 @@
+#Servidores 
 # Introducción
 
 
@@ -109,20 +110,54 @@ Son dos ejemplos de servicios de computación distribuida que disminuyen costes 
 Grid Computing → HTC
 
 Cloud Computing → HPC
-
-TODO/ Seguir
 ## Ingeniería de Servidores
 
 ### Requerimientos
 
 #### Rendimiento
+Cantidad de trabajo realizado por unidad de tiempo
+Magnitudes medibles:
+* Consumo de tiempo
+* Numero de accesos a un componente
+* Utilización de dispositivos o recursos
+
+Elementos que afectan al rendimiento:
+* Hardware
+* Sistema Operativo
+* Aplicaciones
+* Balanceador de Carga
+
+##### Evaluación
+Saber como el software está usando el hardware de una máquina
+
+¿Para que sirve?
+* Optimizar el diseño del servidor
+* Ajustar el servidor
+* Predecir la carga máxima aceptable
+* Seleccionar un Servidor
+###### Índices de rendimiento
+* Tiempo de respuesta
+	* Tiempo total desde el principio hasta el final de una tarea
+* Productividad
+	* Cantidad de trabajo realizada por el servidor por unidad de tiempo
+
+###### ¿Cómo evaluar?
+* Monitorización (medir)
+* Referenciación(benchmarking)(comparar)
+* Modelado(predecir)
 #### Disponibilidad
+Es cuanto tiempo está funcionando el servidor
 #### Fiabilidad
+Cuantas probabilidades de fallar tiene el servidor y que sea a prueba de ataques
 #### Escalabilidad
+Capacidad de Escalar el servidor (ya sea de potencia o de servicios)
 #### Eficiencia energética
+El nombre lo deja clarito
 #### Mantenimiento
+Se debe hacer un sistema fácil de mantener
 #### Coste
+POS LO QUE TE CUESTA
 
-
-## Diseño de servidores
+> [!info] Recordatorio
+> Todo esto se explica en los siguientes temas, por eso no entramos demasiado en ello.
 

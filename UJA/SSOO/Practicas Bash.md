@@ -204,7 +204,7 @@ Las comillas simples deshabilitan toda expansión de variables y la interpretaci
 
 No tiene mucho mas. No hay casos como los anteriores, lo que se meta entre comillas es cadena, y todo es todo, incluido la barra invertida
 ``` Bash
-echo "Me debes \$10"
+echo 'Me debes \$10'
 ```
 Devolverá: Me debes \\$10
 

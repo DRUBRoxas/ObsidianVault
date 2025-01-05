@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8e1f668dc2b79d0a",
+        "id": "dcfed2a99d1ff42c",
         "type": "tabs",
         "children": [
           {
-            "id": "4ad91af6f7bf59b4",
+            "id": "199e79546b66a3a9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "UJA/SSOO/Practicas Bash.md",
+                "file": "UJA/DIS/TEMA 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Practicas Bash"
+              "title": "TEMA 5"
             }
           }
         ]
@@ -43,7 +43,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-folder-closed",
-              "title": "Explorador de archivos"
+              "title": "Files"
             }
           },
           {
@@ -60,7 +60,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Buscar"
+              "title": "Search"
             }
           },
           {
@@ -86,63 +86,18 @@
       {
         "id": "b6ec5b1b709f80ca",
         "type": "tabs",
+        "dimension": 66.45435244161358,
         "children": [
-          {
-            "id": "6a5cd5ca32ca5b76",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "UJA/META/Practica 2/Práctica 2 (NOTAS).md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Enlaces entrantes de Práctica 2 (NOTAS)"
-            }
-          },
-          {
-            "id": "28b3b1b646e07152",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "UJA/META/Practica 2/Práctica 2 (NOTAS).md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Enlaces salientes de Práctica 2 (NOTAS)"
-            }
-          },
-          {
-            "id": "5bcb383fdaa895a7",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "Etiquetas"
-            }
-          },
           {
             "id": "8172044b5fb5570d",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "UJA/SSOO/Practicas Bash.md"
+                "file": "UJA/DIS/TEMA 5.md"
               },
               "icon": "lucide-list",
-              "title": "Esquema de Practicas Bash"
+              "title": "Outline of TEMA 5"
             }
           },
           {
@@ -164,67 +119,178 @@
               "icon": "spreadsheet",
               "title": "Advanced Tables"
             }
+          },
+          {
+            "id": "5e201b3d6b65d6be",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "UJA/DIS/TEMA 5.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for TEMA 5"
+            }
+          },
+          {
+            "id": "082a1c9f862737d8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "UJA/DIS/TEMA 5.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from TEMA 5"
+            }
+          },
+          {
+            "id": "b68d775155e5168d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b844691d74c99d91",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
+      },
+      {
+        "id": "954d1cb53b2e582d",
+        "type": "tabs",
+        "dimension": 33.54564755838641,
+        "children": [
+          {
+            "id": "2279648fd10fca91",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "UJA/DIS/TEMA 5.md",
+                "options": {
+                  "collapse-filter": false,
+                  "search": "",
+                  "localJumps": 2,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": true,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.5396170846225745,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Graph of TEMA 5"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 351.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Abrir selector rápido": false,
-      "graph:Abrir vista gráfica": false,
-      "canvas:Crear nuevo lienzo": false,
-      "daily-notes:Abrir la nota de hoy": false,
-      "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "publish:Publish changes...": false
     }
   },
-  "active": "cc23546f5afa09fe",
+  "active": "199e79546b66a3a9",
   "lastOpenFiles": [
-    "UJA/SSOO/Practicas Bash.md",
-    "UJA/PAG/Proceso de aplicación de texturas.md",
-    "Assets/Diferencias Aliasing.png",
-    "UJA/PAG/RENDERING.md",
-    "Personal/Jueguitos/Until Then.md",
+    "UJA/DIS/Assets/Pasted image 20250105231642.png",
+    "UJA/DIS/Assets/Pasted image 20250105214516.png",
+    "UJA/DIS/Assets/Pasted image 20250105214504.png",
+    "UJA/DIS/Assets/Pasted image 20250105214422.png",
+    "UJA/DIS/Assets/Pasted image 20250105211546.png",
+    "UJA/DIS/Assets/Pasted image 20250105211414.png",
+    "UJA/DIS/Assets/Pasted image 20250105203855.png",
+    "UJA/DIS/Assets/Pasted image 20250105203331.png",
+    "UJA/DIS/Assets/Pasted image 20250105203316.png",
+    "UJA/DIS/Assets/Pasted image 20250105203303.png",
+    "UJA/DIS/Assets/Pasted image 20250105203300.png",
+    "UJA/DIS/Assets",
+    "UJA/DIS/TEMA 5.md",
+    "UJA/DIS/O.md",
+    "UJA/DIS/TEMA 3.md",
+    "UJA/DIS/TEMA 2.md",
+    "UJA/DIS/DIS 2024-2025.md",
+    "UJA/DIS/Formulas/Frecuencia de Reloj.md",
+    "UJA/DIS/TEMA 1.md",
+    "Andres hace mierdas.md",
+    "UJA/DIS/TEMA 4.md",
+    "UJA/DIS/Formulas",
+    "UJA/DIS/Rendimiento.md",
+    "TEMA.md",
+    "UJA/PAG/Texturas.md",
+    "UJA/Indice UJA.md",
+    "Personal/Jueguitos/Lista de Juegos pendientes 2025.md",
+    "Personal/Jueguitos/Jueguitos para jugar con Gente.md",
+    "UJA/PAG/Practicas.md",
+    "Personal/Jueguitos/Outer Wilds.md",
+    "Personal/Dron/Capitulo 1.md",
+    "UJA/SSOO/SSOO 2024-2025.md",
+    "UJA/TGI/Resumen PATIE.md",
+    "UJA/PAG/PAG 2024-2025.md",
+    "UJA/META/METAHEURÍSTICAS 2024-2045.md",
+    "UJA/IPO/IPO 2024-2025.md",
+    "UJA/IPO/Internacionalización.md",
+    "UJA/DIS/DIS.md",
+    "Personal/Dron",
+    "UJA/TGI",
+    "UJA/IPO",
+    "UJA/SSOO/salida.pdf",
     "Personal/Jueguitos",
     "Personal",
-    "UJA/DIS/TEMA 1.md",
-    "UJA/DIS/Rendimiento.md",
-    "UJA/DIS/DIS 2024-2025.md",
-    "UJA/META/Practica 2/Práctica 2 (NOTAS).md",
-    "UJA/META/Practica 2/Practica 2 Enunciado.md",
-    "UJA/META/Ejercicio hecho en clase.md",
-    "UJA/PAG/Reflexión, iluminación y sombreado.md",
-    "UJA/PAG/Programación de Aplicaciones Gráficas.md",
-    "UJA/PAG/Practicas.md",
-    "UJA/PAG/Geometria.md",
-    "UJA/PAG/Cámara.md",
-    "UJA/SSOO/salida.pdf",
     "UJA/SSOO/config.tex",
-    "UJA/SSOO/config.tex.txt",
-    "UJA/SSOO/Nuevo Documento de texto.txt",
-    "UJA/DIS/TEMA 2.md",
-    "Assets/usavariableslinux.png",
-    "Assets/sistemadereferencia.png",
-    "Assets/representacionpuntos.png",
-    "Assets/rendering.png",
-    "Assets/parametrosespeciales.png",
-    "Assets/P07-shell-primeros-pasos.pdf",
-    "Assets/muestrainfolinux.png",
-    "Assets/Malla no válida.png",
-    "Assets/Kubernetes.png",
-    "Assets/gridcloudcomputing.png",
-    "UJA/META/Practica 2",
-    "UJA/META",
-    "UJA/PAG/Camara.md",
-    "UJA/SSOO",
-    "UJA/DIS/Virtualización.md",
-    "Bienvenido.md",
-    "cree un enlace.md"
+    "UJA/SSOO/config.tex.txt"
   ]
 }
