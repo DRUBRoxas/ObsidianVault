@@ -357,6 +357,289 @@ El que medir lo decimos nosotros con nuestro objetivo
 	* **Memoria**: memoria física utilizada, fallos de caché, fallos de página, uso de memoria de intercambio, fallos de TLB, etc.
 	* **Discos**: lecturas/escrituras por unidad de tiempo, longitud de las colas de espera, tiempo de espera medio por acceso, etc.
 	* **Red**: paquetes recibidos/enviados, colisiones por segundo, paquetes perdidos, etc.
-### Monitorización de aplicaciones
- * Módulos más ejecutados
- * Instrucciones más ejecutadas
+### Tipos de monitores y parámetros
+* Según cuando se toman datos
+	* Conducido por evento (event-driver) o cambio de estado. Ejemplo de eventos
+		* Inicio o parada de proceso.
+		* Acceso a recurso, etc.
+	* A intervalos regulares (sampling monitor)
+		* Se define un periodo (T) de muestreo
+		* Mejor para estadísticas
+* Según su naturaleza:
+	* Hardware
+		* Ej: Sonda temperatura CPU
+	* Software
+		* tcpdump, top
+	* Híbridos (Firmware)
+* Según su interactividad
+	* **No interactivos** (bacth monitors): Se ponen en marcha y solo se pueden consultar los datos recogidos tras un periodo de funcionamiento definido
+	* **Interactivos** (on-line monitors): Se pueden ir visualizando los datos interactivamente, e incluso cambiar su configuración
+#### Sobrecarga introducida por un monitor
+La ejecución de las instrucciones del monitor se lleva a cabo utilizando recursos del sistema monitorizado.
+$$
+\text{Sobrecarga }_{\text{Recurso}}=\frac{\text{Uso del recurso por parte del monitor}}{\text{Capacidad total del recurso}}
+$$
+##### Ejemplo:
+- El monitor se activa cada 5s y cada activación del mismo usa el procesador durante 6ms
+$$
+\text { Sobrecarga }_{\mathrm{CPU}}=\frac{6 \times 10^{-3} \mathrm{~s}}{5 \mathrm{~s}}=0.0012=0.12 \%
+$$
+#### Metodología de la monitorización
+Objetivos:
+* Carga de trabajo
+* Ocupación de un componente
+* Problema
+* Evento
+
+##### ¿Cuándo monitorizar?
+* Para conocer la carga de trabajo u ocupación de un componente: siempre que se necesite
+* Problema que se presenta aleatoriamente: siempre
+* Ante un problema/evento predeterminado: muestrear unos minutos antes y después
+
+##### ¿Con que frecuencia?
+* Coste de la monitorización: CPU, espacio en disco,etc.
+* Ante un evento o problema que se quiera monitorizar:
+	* frecuencia $≤\frac{1}{4}$ de la duración del problema
+#### Herramientas de monitorización
+
+##### CRON (Jaja Josema referencia)
+* Es un planificador de tareas para Linux. (servicio crond) 
+* Usado en monitorización para lanzar procesos que lean archivos o que ejecuten utilidades
+* Se configura en el archivo /etc/crontab
+```crontab
+# Example of job definition:
+ # .---------------- minute (0 - 59)
+ # |  .------------- hour (0 - 23)
+ # |  |  .---------- day of month (1 - 31)
+ # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+ # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+ # |  |  |  |  |
+ # *  *  *  *  * user-name command to be executed
+```
+* También se puede leer de otros ficheros como los existentes en /var/spool/cron ó /etc/cron.d
+###### Ejemplos:
+![[Pasted image 20250106004805.png]]
+
+###### Orden crontab
+* Existe un archivo crontab pero también una orden crontab
+* El archivo crontab del sistema es el del root pero también se puede definir un archivo crontab por usuario
+* Ejemplos:
+```Bash
+ crontab archN #Sustituye el archivo crontab por archN
+ crontab–e #editar el archivo crontab del usuario
+ crontab–l #editar las tareas del archivo crontab
+ crontab–d #borra el archivo de tareas de crontab
+ crontab–l –u usu1 #listado del archivo crontab de usu1
+```
+
+##### Directorio /proc
+* Directorio que no existe físicamente en disco, sino en memoria.
+* Sirve de interfaz de **comunicación con el kernel** para obtener diferente información del sistema e incluso configurarlo
+* A través de los fichero /proc podemos:
+	* Acceder a información global sobre el S.O.
+	* Acceder a la información de cada uno de los procesos del sistema.
+	* Acceder y, a veces, modificar algunos parámetros del kernel del S.O.
+* Los monitores suelen obtener de aquí su información
+##### Archivos de registro (logs)
+* /var/log/kern.log: Registro de los mensajes del núcleo (Kernel).
+* /var/log/messages: Registro de mensajes de sistema y sus programas 
+* /var/log/dmesg: Arranque del sistema y conexiones de hardware – similar a ejecutar orden "dmesg" 
+* /var/log/debug: Depuración de los programas. 
+* /var/log/Xorg.0.log: Entorno gráfico 
+* /var/log/boot.log: Información del arranque 
+* /var/log/fontconfig.log: Fuentes del sistema 
+* /var/log/mail.log: Logs del servidor de correo 
+* /var/log/auth.log: Conexiones al sistema incluidos los intentos fallidos y los accesos como root
+`tail-f --retry /var/log/syslog /var/log/auth.log` 
+\#líneas finales y actualización del contenido de los ficheros
+
+##### dmidecode
+* Muestra el hardware instalado en el sistema según está descrito en la BIOS
+uso:
+`dmidecode [--type | -t] [Keyword | Types]`
+![[Pasted image 20250106010112.png]]
+
+##### Info del procesador
+
+* info de uso: `cat /proc/cpuinfo`
+![[Pasted image 20250106010221.png]]
+* Tipo de procesador instalado: dmidecode --type processor
+	* Resultados similares a los anteriores
+##### Info de la memoria
+
+* info de uso: `cat /proc/meminfo`
+![[Pasted image 20250106010516.png]]
+* Tipo de memoria instalada: `dmidecode --type memory`
+![[Pasted image 20250106010629.png]]
+
+##### Carga del sistema en Unix
+* Estados básicos de un proceso
+	* En ejecución (running) o en la cola de ejecución (runnable)
+	* Durmiendo esperando a que se complete una operación de E/S para continuar (uninterruptible sleep = I/O blocked)
+	* Bloqueado esperando a un evento del usuario o similar (p.ej. una pulsación de tecla)(interruptible sleep)
+* La cola de procesos del núcleo (run queue) está formada por aquellos que pueden ejecutarse
+* Carga del sistema (system load): número de procesos en modo running, runnable o I/O blocked. Se puede dar como media de diferentes intervalos de tiempo.
+
+##### ps(process status)
+* Información sobre el estado actual de los procesos del sistema
+	* Es una de las herramientas más importantes empleadas en tareas de monitorización
+	* ![[Pasted image 20250106011157.png]]
+	* Tiene una gran cantidad de parámetros (Aquí se presentan algunas)
+	* ![[Pasted image 20250106011301.png]]
+###### Información devuelta por ps
+* USER
+	* usuario que lanzó el proceso
+* %CPU, %MEM
+	* Porcentaje de procesador y memoria física usada
+* SIZE (o VSIZE)
+	* Memoria (KiB) virtual total inicialmente asignada al proceso
+* RSS (resident size)
+	* Memoria (KiB) física (RAM) ocupada por el proceso actualmente
+* STAT
+	* **R** (running or runnable), **D** (I/O blocked), **S** (interruptible sleep), **T** (stopped), **Z** (Zombie: terminated but not died)
+`pstree` Muestra la jerarquía de procesos del sistema
+![[Pasted image 20250106011719.png]]
+
+##### top
+Muestra cada T segundos: carga media, procesos, consumo de memoria... Normalmente se ejecuta en modo interactivo.
+![[Pasted image 20250106011821.png]]
+##### uptime
+Comando que devuelve la carga del sistema
+![[Pasted image 20250106011856.png]]
+
+* Estimación aproximada del nivel de carga (aunque depende de las prestaciones esperadas de cada sistema)
+	* Operación normal: hasta 3
+	* Muy alta: entre 4 y 7
+	* Excesivamente alta: mayor que 10
+##### iostat
+Devuelve información de uso de CPU y sistema de discos (incluido NFS)
+![[Pasted image 20250106012448.png]]
+* %user: % de tiempo empleado en ejecución en modo usuario 
+* %nice: % de ejecución en un modo de prioridad 
+* %sytem: % de ejecución del sistema 
+* %iowait: % de bloqueo de la CPU en operaciones de E/S 
+* %steal: % empleado perdido involuntariamente por la ejecución de máquinas virtuales 
+* %idle: % CPU sin uso 
+* tps: transferencias por segundo
+##### mpstat
+Información de la CPU para máquinas con más de un procesador
+![[Pasted image 20250106012555.png]]
+* %irq: % de tiempo empleado en servir interrupciones 
+* %soft: % en ejecutar el software de las interrupciones 
+* %guest: % en ejecutar máquinas virtuales (cuando eres un hipervisor)
+
+##### free
+Información sobre la memoria
+![[Pasted image 20250106013005.png]]
+* **total**: Cantidad total de memoria que puede ser utilizada por las aplicaciones. 
+* **used**: Memoria utilizada. used = total - libre - buffers – cache
+* **free** - Libre / Memoria no utilizada. 
+* **shared**- Esta columna puede ser ignorada ya que no tiene ningún significado. Está aquí sólo para la compatibilidad retroactiva.
+* **buff**/**cache** - La memoria combinada usada por los buffers del kernel y el cache de páginas y tablas. Esta memoria puede ser reclamada en cualquier momento si las aplicaciones la necesitan.
+* **available**: Estimación de la cantidad de memoria disponible para iniciar nuevas aplicaciones, sin swap
+##### vmstat
+Paging (paginación), swapping, interrupciones, cpu
+* La primera línea no sirve para nada
+* ![[Pasted image 20250106013231.png]]
+* procesos: **r** (runnable), **b** (I/O blocked),
+* Bloques por segundo transmitidos: **bi** (blocks in), (blocks out)
+* KB/s entre memoria y disco: **si** (swapped in), **so** (swapped out)
+* **in** (interrupts por second), **cs** (context switches)
+##### pidstat
+Información sobre procesos y su consumo de recursos
+![[Pasted image 20250106013556.png]]
+
+##### Ocupación del disco
+* `df`: ocupación genérica del sistema de ficheros
+	* `-h`: human-readable
+	* `-p`: portable sin saltos de línea
+	* ![[Pasted image 20250106013811.png]]
+* `du`: ocupación de directorios concretos
+	* `-s`: suma total sin definir subdirectorios
+	* `-x`: no cruzar sistema de ficheros, para no tener problemas en los puntos de montaje
+	* ![[Pasted image 20250106013937.png]]
+##### Monitorización de redes
+* Recordatorio de herramientas de monitorización de redes
+	* netstat
+	* tcpdump
+	* wireshark
+	* ![[Pasted image 20250106014127.png]] (Esta foto está en los apuntes)
+##### Esquema final
+![[Pasted image 20250106014210.png]]
+
+##### sar (System activity reporter)
+* Muy utilizado por los administradores de sistemas Unix en la detección de cuellos de botella (bottlenecks)
+* Información sobre todo el sistema
+	* Actual: Que está pasando en el momento al sistema
+	* Histórica: Que ha pasado en los días pasados
+		* Ficheros históricos
+			* saDD, donde los dígitos DD indican el dia del mes
+	* Hace uso de contadores estadísticos del núcleo del sistema operativo ubicados en los directorios /proc y /dev/mem
+###### Funcionamiento de SAR
+la suite SAR funciona recogiendo datos periodicamente y/o mostrando estos datos cuando se le solicita. tiene las siguientes utilidades:
+* sar: utilizada para mostrar los datos
+* sadc: utilizada para monitorizar el sistema
+* sa1: llama a sadc para recolectar datos y guardarlos en modo binario
+* sa2: llama a sadc para volcar en modo texto los datos de un día
+Estos datos se guardan en /var/log/sa en los ficheros saxx donde xx indica el dia del mes.
+![[Pasted image 20250106014944.png]]
+![[Pasted image 20250106014953.png]]
+###### Parámetros de sar:
+
+| Parametro | Descripción                                    |
+| --------- | ---------------------------------------------- |
+| -A        | Toda la información disponible                 |
+| -b        | Estadísticas de transferencias de E/S          |
+| -B        | Paginación de la memoria virtual               |
+| -d        | Transferencias para cada disco                 |
+| -e        | Hora de fin de la monitorización               |
+| -f        | Fichero de donde extraer la información        |
+| -I        | Estadísticas sobre interrupciones              |
+| -n        | Conexión de red [DEV \| IP \| TCP …]           |
+| -o        | Guardar salida en un fichero                   |
+| -p        | Mostrar estadísticas por cada procesador       |
+| -q        | Tamaño de la cola y carga media del sistema    |
+| -r        | Utilización de memoria                         |
+| -R        | Estadísticas sobre la memoria                  |
+| -s        | Hora de comienzo de la monitorización          |
+| -S        | Estadísticas sobre utilización de espacio swap |
+| -u        | Utilización del procesador                     |
+| -w        | Cambios de contexto                            |
+| -W        | Estadísticas sobre swapping                    |
+###### Ejemplos
+* Ejecución interactiva
+	* sar 2 30
+* Información recogida sobre el día de hoy
+	* sar
+	* sar -d -s 10:00 -e 12:00
+	* sar -A
+	* sar -n DEV
+* Información recogida en otro día anterior
+	* sar -f /var/log/sa/sa02
+	* sar-P -f /var/log/sa/sa06
+	* sar-d -s 10:00 -e 12:00 -f /var/log/sa/sa04
+##### Monitorización USE (Utilization, Saturation, Errors)
+* Para cada recurso (CPU, memoria, E/S, red,etc.) comprobamos:
+	* Utilización: Tanto por ciento de utilización del recurso
+	* Saturación: Tamaño de las colas de aquellas tareas que quieren hacer uso de ese recurso
+	* Errores: Mensajes de error del kernel sobre el uso de dichos recursos
+* Ejemplo: CPU
+	- Utilización: vmstat 1, "us" + "sy" + "st"; sar-u, sum fields except "%idle" and "%iowait"; …
+	- Saturación: vmstat 1, "r" > CPU count \[2]; sar-q, "runq-sz" > CPU count;…
+	- Errores: perf (LPE) if processor specific error events (CPC) are available;...
+![[Pasted image 20250106020141.png]]
+
+###### Monitorización a nivel de aplicación (profiling)
+* Objetivo
+	* Observar el comportamiento de una aplicación concreta con el fin de obtener información para poder optimizar su código.
+* Información que pueden proporcionar las herramientas de análisis
+	* ¿Cuánto tiempo tarda en ejecutarse el programa? ¿Qué parte de ese tiempo es de usuario y cuál de sistema? ¿Cuánto tiempo se pierde por las operaciones de E/S? ¿Cuántos fallos de caché/TLB/página genera cada línea del programa?
+	* ¿En qué parte del código pasa la mayor parte de su tiempo de ejecución?
+	* ¿Cuántas veces se ejecuta cada línea de programa?
+	* ¿Cuántas veces se llama a un procedimiento y desde dónde?
+	* ¿Qué funciones se llaman desde un determinado procedimiento?
+##### Time
+![[Pasted image 20250106020447.png]]
+> [!note] Notita
+> El resto es comida de tipo test prácticamente, vete directamente a las diapositivas del tema 5 y sigue leyendo desde la diapositiva 90 que yo voy apurao
+
