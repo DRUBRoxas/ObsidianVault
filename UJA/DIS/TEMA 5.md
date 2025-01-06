@@ -1,3 +1,7 @@
+---
+tags:
+  - Servidores
+---
 ## Introducción
 
 >[!info]

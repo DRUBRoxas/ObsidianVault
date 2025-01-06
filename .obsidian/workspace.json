@@ -208,8 +208,7 @@
               "title": "All properties"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "954d1cb53b2e582d",
@@ -222,7 +221,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "UJA/DIS/DIS 2024-2025.md",
+                "file": "UJA/DIS/TEMA 5.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -250,15 +249,14 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of DIS 2024-2025"
+              "title": "Graph of TEMA 5"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 351.5,
-    "collapsed": true
+    "width": 351.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -272,7 +270,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c58cae00d33dbec8",
+  "active": "8172044b5fb5570d",
   "lastOpenFiles": [
     "UJA/DIS/Relación de ejercicios.md",
     "UJA/DIS/TEMA 5.md",
