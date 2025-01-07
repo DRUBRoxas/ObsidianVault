@@ -208,7 +208,8 @@
               "title": "All properties"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "954d1cb53b2e582d",
@@ -270,7 +271,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8172044b5fb5570d",
+  "active": "cc23546f5afa09fe",
   "lastOpenFiles": [
     "UJA/DIS/Relación de ejercicios.md",
     "UJA/DIS/TEMA 5.md",
