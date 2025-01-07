@@ -647,4 +647,4 @@ Estos datos se guardan en /var/log/sa en los ficheros saxx donde xx indica el di
 > [!note] Notita
 > El resto es comida de tipo test prácticamente, vete directamente a las diapositivas del tema 5 y sigue leyendo desde la diapositiva 90 que yo voy apurao
 
-Prueba
+Cambio iOS
