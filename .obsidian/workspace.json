@@ -4,49 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c9042710dc479859",
+        "id": "e1e0cd8c1a4bd42f",
         "type": "tabs",
         "children": [
           {
-            "id": "c58cae00d33dbec8",
+            "id": "2e123b7e6ddff4b6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "UJA/DIS/Relación de ejercicios.md",
+                "file": "UJA/PAG/Programación de Aplicaciones Gráficas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Relación de ejercicios"
-            }
-          },
-          {
-            "id": "81b9cec863aaeaa7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "UJA/DIS/Ley de Ahmdal.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Ley de Ahmdal"
-            }
-          },
-          {
-            "id": "53f67a18dc86e95e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "UJA/DIS/Relación de ejercicios.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Relación de ejercicios"
+              "title": "Programación de Aplicaciones Gráficas"
             }
           }
         ]
@@ -222,7 +194,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "UJA/DIS/Relación de ejercicios.md",
+                "file": "UJA/PAG/Programación de Aplicaciones Gráficas.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -250,7 +222,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Relación de ejercicios"
+              "title": "Graph of Programación de Aplicaciones Gráficas"
             }
           }
         ]
@@ -271,12 +243,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c58cae00d33dbec8",
+  "active": "2e123b7e6ddff4b6",
   "lastOpenFiles": [
-    "UJA/DIS/TEMA 5.md",
-    "Nuevo Documento de texto.txt",
+    "UJA/PAG/Reflexión, iluminación y sombreado.md",
+    "UJA/PAG/RENDERING.md",
+    "UJA/PAG/Texturas.md",
+    "UJA/PAG/Programación de Aplicaciones Gráficas.md",
+    "UJA/PAG/Proceso de aplicación de texturas.md",
+    "UJA/PAG/Practicas.md",
+    "UJA/PAG/PAG 2024-2025.md",
+    "UJA/PAG/Geometria.md",
+    "UJA/PAG/Cámara.md",
     "UJA/DIS/Relación de ejercicios.md",
     "UJA/DIS/Ley de Ahmdal.md",
+    "UJA/DIS/TEMA 5.md",
+    "Nuevo Documento de texto.txt",
     "Andres hace mierdas.md",
     "UJA/DIS/DIS 2024-2025.md",
     "UJA/DIS/Cositas con josema.md",
@@ -300,17 +281,9 @@
     "UJA/DIS/Formulas",
     "UJA/DIS/Rendimiento.md",
     "TEMA.md",
-    "UJA/PAG/Texturas.md",
     "UJA/Indice UJA.md",
     "Personal/Jueguitos/Lista de Juegos pendientes 2025.md",
     "Personal/Jueguitos/Jueguitos para jugar con Gente.md",
-    "UJA/PAG/Practicas.md",
-    "Personal/Jueguitos/Outer Wilds.md",
-    "Personal/Dron/Capitulo 1.md",
-    "UJA/SSOO/SSOO 2024-2025.md",
-    "UJA/TGI/Resumen PATIE.md",
-    "UJA/PAG/PAG 2024-2025.md",
-    "UJA/META/METAHEURÍSTICAS 2024-2045.md",
     "Personal/Dron",
     "UJA/TGI",
     "UJA/IPO",
