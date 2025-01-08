@@ -29,4 +29,31 @@ Tienen 2 valores:
 
 ### Operaciones con vectores
 
-Módulo -> longitud (magnitud) del mismo
+#### Modulo 
+longitud (magnitud) de un vector
+$$
+\begin{gathered}
+\mathbf{v}=(x, y, z) \\\\
+|\mathbf{v}|=\sqrt{x^2+y^2+z^2}
+\end{gathered}
+$$
+#### Normalizar
+Igualar el vector a la unidad
+$$
+\hat{v}=(x,y,z)
+$$
+$$
+\hat{\mathbf{v}}=\frac{\mathbf{v}}{|\mathbf{v}|}=\left[\begin{array}{llll}
+\frac{x}{|\mathbf{v}|} & \frac{y}{|\mathbf{v}|} & \frac{z}{|\mathbf{v}|} & 0
+\end{array}\right]^T
+$$
+#### Producto Escalar
+Hay 2 formas:
+##### Sumando productos
+$$
+a*b=a_x*b_x+a_y*b_y+a_z*b_z
+$$
+##### Multiplicando los módulos
+$$
+a
+$$
