@@ -96,13 +96,4 @@
 **Respuesta:** Para activar el dispatcher, el proceso en ejecución debe bloquearse o terminar. Esto se puede lograr mediante operaciones como realizar una E/S (por ejemplo, una llamada a `scanf` en C), ejecutar una operación `wait` sobre un semáforo a cero o invocar una instrucción `exit` en C.
 
 ### 22. Un sistema tiene los siguientes recursos: una CPU, dos discos y una impresora. En el sistema se van a ejecutar dos procesos con las siguientes características:
-
-- **P1:** 13 unidades de tiempo en el orden siguiente: 1 para CPU, 3 para disco1, 2 para CPU, 6 para impresora y 1 para CPU.
-- **P2:** 16 unidades de tiempo en el orden siguiente: 6 para CPU, 1 para disco1, 3 para CPU, 2 para disco2, 1 para CPU, 1 para impresora y 2 para CPU.
-
-**Respuesta:**
-
-- **a)** En un sistema de monoprogramación, los procesos se ejecutan uno tras otro. P1 tardará 13 unidades de tiempo y P2 29, con un tiempo medio de finalización de 21 unidades. La utilización de los dispositivos será proporcional al tiempo total.
-- **b)** En un sistema multiprogramado, mientras un proceso realiza E/S, el otro puede usar la CPU, reduciendo el tiempo total a 18 unidades. El tiempo medio de finalización será de 17 unidades, con una mayor utilización de los recursos.
-
-(Continúa con el desarrollo de los cálculos y la pregunta 23).
+Estos están a mano
