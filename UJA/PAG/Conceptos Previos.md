@@ -55,5 +55,7 @@ a*b=a_x*b_x+a_y*b_y+a_z*b_z
 $$
 ##### Multiplicando los módulos
 $$
-a
+a*b=| a|*|b|*cos \alpha
 $$
+#### La proyección de un vector
+vector $\frac{a*b}{|b|}$
