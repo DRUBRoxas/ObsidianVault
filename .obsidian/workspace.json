@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "UJA/PAG/Conceptos Previos.md",
+                "file": "UJA/SSOO/Relación 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Conceptos Previos"
+              "title": "Relación 2"
             }
           }
         ]
@@ -194,7 +194,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "UJA/PAG/Conceptos Previos.md",
+                "file": "UJA/SSOO/Relación 2.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -222,7 +222,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Conceptos Previos"
+              "title": "Graph of Relación 2"
             }
           }
         ]
@@ -245,10 +245,11 @@
   },
   "active": "2e123b7e6ddff4b6",
   "lastOpenFiles": [
+    "UJA/PAG/Conceptos Previos.md",
+    "UJA/SSOO/Relación 2.md",
     "UJA/PAG/Assets/Pasted image 20250108034111.png",
     "UJA/PAG/Assets",
     "UJA/PAG/Programación de Aplicaciones Gráficas.md",
-    "UJA/PAG/Conceptos Previos.md",
     "UJA/PAG/Rendering.md",
     "UJA/PAG/Reflexión, iluminación y sombreado.md",
     "UJA/PAG/RENDERING.md",
@@ -274,7 +275,6 @@
     "UJA/DIS/Assets/Pasted image 20250106013937.png",
     "UJA/DIS/Assets/Pasted image 20250106013811.png",
     "UJA/DIS/Assets/Pasted image 20250106013556.png",
-    "UJA/DIS/Assets/Pasted image 20250106013231.png",
     "UJA/DIS/Assets",
     "UJA/DIS/O.md",
     "UJA/DIS/TEMA 3.md",
